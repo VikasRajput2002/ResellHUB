@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Available Slots</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Date</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let slot of slots">
+          <td>{{ slot.productId }}</td>
+          <td>{{ slot.date | date }}</td>
+          <td>{{ slot.startTime }}</td>
+          <td>{{ slot.endTime }}</td>
+          <td>
+              <button *ngIf="!slot.booked" type="button" (click)="bookSlot(slot.productId,slot.date,slot.startTime,slot.endTime)" style="background-color: purple; color: white; padding: 10px 20px;">Book</button>
+<button *ngIf="slot.booked" type="button" style="background-color: rgb(121, 116, 119); color: rgb(241, 230, 230); cursor: not-allowed; padding: 10px 20px;">Slot not available</button>
+
+            
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,56 @@
+/* Add this CSS to your component's CSS file or a global stylesheet */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-container button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .booked-button {
+    background-color: #ccc;
+    color: #333;
+    cursor: not-allowed;
+  }
+  

@@ -1,0 +1,33 @@
+/* Add your custom styles here */
+.mat-table {
+    background-color: #6200ea; /* Purple background color */
+    color: white; /* White text color */
+  }
+  
+  /* Style the table header */
+ /* Add your custom styles here */
+.mat-header-cell {
+    background-color: purple;
+    color: white;
+  }
+  
+  .table-container {
+    max-width: 700px;
+    margin: 0 auto;
+    border-collapse: collapse; /* Remove cell spacing */
+    border: 1px solid #ddd; /* Add a 1px border around the table */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+ 
+  
+  
+  /* Style the table rows on hover */
+  .mat-row:hover {
+    background-color: #7b1fa2; /* Hover color for rows */
+  }
+  /* Add your custom styles here */
+.table-container {
+    max-width: 700px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  

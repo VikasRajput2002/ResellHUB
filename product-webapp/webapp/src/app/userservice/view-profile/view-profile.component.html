@@ -1,0 +1,28 @@
+ <app-navbar></app-navbar> 
+ <div class="profile-card card">
+    <div class="card-body">
+      <div class="text-center">
+        <img *ngIf="user?.profileImage" [src]="getUserProfileImage()" alt="Profile Image" class="avatar">
+        <img *ngIf="!user?.profileImage" src="assets/image.jpeg" alt="Default Profile Image" class="avatar">        <h2 class="mb-3">{{ user.name }}</h2>
+        <p class="text-muted">{{ user.email }}</p>
+      </div>
+      <hr>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Contact Information</h4>
+          <p class="card-text">Mobile No: {{ user.mobile }}</p>
+          <p class="card-text">Gender: {{ user.gender }}</p>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <h4 class="card-title">Location</h4>
+          <p class="card-text">{{ user.address }}</p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <button routerLink="/edit-profile" class="btn btn-primary">Edit Profile</button>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>

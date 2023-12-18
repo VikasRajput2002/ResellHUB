@@ -1,0 +1,127 @@
+.orders{
+    display: flex;
+    justify-content: center;
+    padding:20px;
+    border-radius: 30px;
+    
+    align-items: center;
+}
+.order{
+    display: flex;
+    flex-direction: row;
+    height: 170px;
+    
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+img{
+    
+    height:150px;
+    width:150px;
+    margin-right: 50px;
+}
+.product-details{
+   margin-left: 10px;
+   width:500px;
+}
+
+
+.long-arrow-right{
+  display: block;
+  margin: 30px 30px;
+  width: 25px;
+  height: 25px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+
+.long-arrow-right{
+ transform: rotate(135deg);
+ 
+}
+
+
+.long-arrow-right::after{
+  content: "";
+  display: block;
+  width: 2px;
+  height: 45px;
+  background-color: black;
+  transform: rotate(-45deg) translate(15px, 4px);
+  left: 0;
+  top: 0;
+}
+
+/* search */
+
+
+.search {
+  width: 100%;
+  margin-top:30px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchTerm {
+  
+  width: 300px;
+  border: 1px solid #2d033d;
+  border-right: none;
+  padding: 5px;
+  height: 24px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #111312;
+}
+
+.searchTerm:focus{
+  color: #2d033d;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #2d033d;
+  background: #ffff;
+  text-align: center;
+  color: #2d033d;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 128, 128);
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+.order:hover{
+  /* transition: all 0.2s ease-out; */
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  /* top: -4px; */
+  border: 1px solid rgb(0, 128, 128);
+  /* padding:20px; */
+}
+a{
+  text-decoration: none;
+  color: #000;
+}

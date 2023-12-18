@@ -1,0 +1,31 @@
+<div class="form-container">
+  <h2 style="color: rgb(0,128,128)">Add Slot</h2>
+  <form [formGroup]="slotForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="form-group">
+      <mat-label>Booking Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="bookingDate" [min]="minDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    
+    <mat-form-field class="form-group">
+      <mat-label>Start Time</mat-label>
+      <input matInput type="time" formControlName="startTime" >
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <mat-label>End Time</mat-label>
+      <input matInput type="time" formControlName="endTime" (input)="checkEndTime()">
+      <div *ngIf="showEndTimeAlert" class="invalid-feedback">End time must be after the start time.</div>
+    </mat-form-field>
+    
+    
+    
+    
+    <div class="container">
+      <button mat-raised-button color="primary" type="submit" [routerLink]="['/view-products']" class="back-button">Back</button>
+      <button mat-raised-button color="primary" type="submit" class="add-button">Add Slot</button>
+    </div>
+    
+    
+  </form>
+</div>

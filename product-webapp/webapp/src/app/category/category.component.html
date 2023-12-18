@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<section class="products">
+  <ng-container *ngFor="let product of products">
+    <div class="product square" >
+      <mat-card (click)="showProducts(product.id)">
+      <img [src]="product.productImg" [alt]="product.productName">
+      <h3>
+        {{ product.productName }} <br>
+        Price: {{product.productPrice}} <br>
+        Location: {{product.location}}
+      </h3>
+    </mat-card>
+    </div>
+  </ng-container>
+</section>
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,170 @@
+/* Style the container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+ 
+}
+
+/* Style the stepper */
+.mat-stepper-horizontal {
+  /* background-color: #f2f2f2; */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  background-color: rgb(203, 206, 206);
+}
+
+
+/* Style the step headers */
+.mat-step-header {
+  background-color: rgb(0,128,128);
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+/* Style the step labels */
+.mat-step-label {
+  font-weight: bold;
+  color:black;
+}
+
+/* Style the step content */
+.mat-step-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color:black;
+}
+
+/* Style form fields within steps */
+.form-group {
+  margin-bottom: 20px;
+  color:black;
+}
+
+/* Style labels for form fields */
+.form-group label {
+  font-weight: bold;
+  color:black;
+}
+
+/* Style input fields */
+.form-control {
+  /* width: 100%;
+  padding: 8px; */
+  box-sizing: border-box;
+  color:black;
+}
+
+/* Style buttons within steps */
+/* Style buttons within steps as rounded buttons with a solid background */
+.mat-step button.mat-button {
+  background-color: #007bff;
+  color:black;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Hover effect for the buttons */
+.mat-step button.mat-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Style the "Add Product" button */
+.mat-step:last-child mat-button {
+  background-color: rgb(0,128,128);
+  color: #fff;
+}
+/* Change the border color to purple */
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgb(0,128,128); /* Set border color to purple */
+  border-radius: 4px; /* Add border radius for rounded corners */
+}
+
+
+/* Style buttons within steps as rounded buttons with a solid background */
+.mat-step button.mat-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Hover effect for the buttons */
+.mat-step button.mat-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the "Add Product" button */
+.mat-step:last-child mat-button {
+  background-color: rgb(0,128,128);
+  color: rgb(0, 0, 0);
+}
+
+/* Define the color for the custom "Next" button */
+/* Style the button container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Style the "Back" button */
+.custom-back-button {
+  background-color: #bcbec0; /* Change to your desired color */
+  color: rgb(253, 248, 248); /* Text color */
+  border: none;
+  float: left;
+  margin-left: 10px; /* Remove the default button border */
+}
+
+/* Hover effect for the "Back" button */
+.custom-back-button:hover {
+  background-color: #bbbdbe; /* Change to a darker shade or a hover color */
+}
+
+/* Style the "Next" button */
+.custom-next-button {
+  background-color: rgb(0,128,128); /* Change to your desired color */
+  color: #fff; /* Text color */
+  border: none;
+  order: -1; 
+  float: right;
+  margin-right: 10px;/* Change the order to -1 to move it to the left corner */
+}
+
+/* Hover effect for the "Next" button */
+.custom-next-button:hover {
+  background-color:rgb(0,128,128); /* Change to a darker shade or a hover color */
+}
+
+.submit {
+  background-color: rgb(0,128,128); /* Change to your desired color */
+  color: rgb(0, 0, 0); /* Text color */
+  border: none;
+  float: right;
+  margin-left: 10px;
+}
+.mat-step-label {
+  color: black !important;
+}
+
+.mat-step-text-label {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.mat-step-label.mat-step-label-active {
+  color: black!important;
+}
+

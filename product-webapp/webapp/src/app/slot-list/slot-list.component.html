@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="mat-card-container">
+    <mat-card *ngFor="let slot of slots" class="mat-card product-container">
+      <mat-card-content>
+        <div style="display: flex; align-items: flex-start; justify-content: flex-start;">
+          <div style="flex: 1;">
+            <img class="product-image" [src]="slot.productImgUrl" alt="{{ slot.productName }}" style="width: 400px; height: 400px;">
+          </div>
+          <div style="flex: 1;">
+            <div>
+              <p class="mat-h2"><b>{{ slot.productName }}</b></p>
+              <p class="mat-h3">Category: {{ slot.productCategory }}</p>
+
+              <p class="mat-body-1">{{ slot.productDesc }}</p>
+              <p class="mat-subheading-1">Price: &#8377;{{ slot.productPrice }}</p>
+              <p class=" mat-subheading-2">Location: {{ slot.location }}</p>
+
+              <div *ngFor="let user of userDetails">
+                <h2>Seller Details</h2>
+                <p><strong>Name:</strong> {{ user.name }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Phone:</strong> {{ user.mobile }}</p>
+              </div>
+
+
+
+            </div>
+            
+            <div style="display: flex; justify-content: flex-start;">
+              <button mat-raised-button color="primary" (click)="viewSlots(slot.id)" *ngIf="!isCurrentUserSeller(slot.userId)">
+                View Slots
+              </button>
+
+              <button mat-raised-button color="primary"style="margin-left: 10px;" (click)="pay(slot.productPrice,slot.id)" *ngIf="!isCurrentUserSeller(slot.userId)">
+                Pay Now
+              </button>
+              
+              <button
+                mat-raised-button
+                color="primary"
+                style="margin-left: 10px;"
+                *ngIf="!isCurrentUserSeller(slot.userId)"
+                (click)="startChatWithSeller(slot.userId, slot.name, slot.id, slot.productPrice)"
+              >
+                Chat with Seller
+              </button>
+<p *ngIf="isCurrentUserSeller(slot.userId)">This is your product.</p>
+
+
+
+
+          
+                        </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<h2>Similar Products</h2>
+<div class="similar-products">
+  
+  <div class="similar-product-container">
+    <mat-card *ngFor="let similarProduct of similarProduct" class="similar-product" (click)="navigateToProductDetails(similarProduct.id,similarProduct.productCategory)">
+      <div class="product-image-container">
+        <img class="product-image" [src]="similarProduct.productImg" alt="{{ similarProduct.productName }}">
+      </div>
+      <mat-card-content>
+        <h3>{{ similarProduct.productName }}</h3>
+        <p>Price: &#8377;{{ similarProduct.productPrice }}</p>
+        <!-- Add any additional buttons or details here -->
+
+        
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

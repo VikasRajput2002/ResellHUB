@@ -1,0 +1,30 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="register-photo">
+            <div class="form-container">
+                <div class="image-holder"></div>
+                <form #loginform="ngForm" (ngSubmit)="login()" novalidate>
+                    <h2 class="text-cente"><strong> Login </strong> </h2>
+                    <div class="form-group">
+                        <input type="email" [class.is-invalid]="email.invalid && email.touched" class="form-control" #email="ngModel" required  [(ngModel)]="user.email" name="email" placeholder="Email address">
+                        <div class="text-danger" [class.d-none]="email.valid || email.untouched"><small>*Email is required</small></div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <input class="form-control" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required type="password" [(ngModel)]="user.password" name="password" placeholder="Password">
+                        <div class="text-danger" [class.d-none]="password.valid || password.untouched"> <small>*Password is required</small></div>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loginform.form.invalid" class="btn btn-primary mt-3" type="submit">Login</button>
+                    </div>
+                    <div>
+                        <a class="already mt-2" style="color: black; margin-right: 8px;" routerLink="/forgot">Forgot password? </a>
+                        <a class="already mt-2" style="color: rgb(31, 28, 218);" routerLink="/register"> Signup.</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

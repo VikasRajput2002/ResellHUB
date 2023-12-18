@@ -1,0 +1,36 @@
+<div class="table-container">
+  <div class="table-container">
+    <button mat-button color="primary" [routerLink]="['/view-products']" class="back-button">
+      <mat-icon>chevron_left</mat-icon>
+      Back
+    </button>
+    <div class="header-container">
+      <h2>View Slots</h2>
+    </div>
+    <table mat-table class="mat-elevation-z8" [dataSource]="slots">
+      <!-- Define columns -->
+      <ng-container matColumnDef="bookingDate">
+        <th mat-header-cell style="background-color:rgb(17,195,201)" *matHeaderCellDef> Booking Date </th>
+        <td mat-cell *matCellDef="let slot"> {{ slot.bookingDate }} </td>
+      </ng-container>
+      <ng-container matColumnDef="startTime">
+        <th mat-header-cell  style="background-color:rgb(17,195,201)" *matHeaderCellDef> Start Time </th>
+        <td mat-cell *matCellDef="let slot"> {{ slot.startTime }} </td>
+      </ng-container>
+      <ng-container matColumnDef="endTime">
+        <th mat-header-cell  style="background-color:rgb(17,195,201)"  *matHeaderCellDef> End Time </th>
+        <td mat-cell *matCellDef="let slot"> {{ slot.endTime }} </td>
+      </ng-container>
+  
+      <!-- Assign column definitions to the table -->
+      <tr mat-header-row *matHeaderRowDef="['bookingDate', 'startTime', 'endTime']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['bookingDate', 'startTime', 'endTime']"></tr>
+    </table>
+  </div>
+  <!-- <div class="table-container">
+    <button mat-button color="primary" [routerLink]="['/view-products']" class="back-button">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+  </div> -->
+    
+  

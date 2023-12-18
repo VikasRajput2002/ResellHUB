@@ -1,0 +1,71 @@
+spring:
+  application:
+    name: api-gateway
+
+  ##GATEWAY CONFIGURATIONS
+
+  cloud:
+    gateway:
+      routes:
+        ## service1
+        - id: Order-Service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/orders/**
+       
+        ## service2
+        - id: User-Service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+            
+        ## service3
+        - id: Authentication-Service
+          uri: lb://AUTHENTICATION-SERVICE
+          predicates:
+            - Path=/user/**
+            
+        ## service4
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/products/**
+            
+         ## service5
+        - id: slot-service
+          uri: lb://SLOT-SERVICE
+          predicates:
+            - Path=/slots/**
+            
+         ## service6
+        - id: chat-Service
+          uri: lb://CHAT-SERVICE
+          predicates:
+            - Path=/chats/**
+            
+        ## service6
+        - id: Payment-Service
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/**
+         
+        ## service6
+        - id: Email-Service
+          uri: lb://EMAIL-SERVICE
+          predicates:
+            - Path=/email/**
+            
+       ## service7
+        - id: ProductWebapp-Service
+          uri: http://localhost:4200
+          predicates:
+            - Path=/
+
+        
+server:
+  port: 9004
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8764/eureka

@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="main">
+    <div class="product-details">
+    <img [src]="order.product.productImg" alt="">
+    <h2>{{order.product.productName}}</h2>
+    <p>{{order.product.productDesc}}</p>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<!-- <section class="step-wizard">
+<ul class="step-wizard-list">
+    <li class="step-wizard-item">
+        <span class="progress-count">1</span>
+        <span class="progress-label">Order placed</span>
+    </li>
+    <li class="step-wizard-item ">
+        <span class="progress-count">2</span>
+        <span class="progress-label">Shipped</span>
+    </li>
+    <li class="step-wizard-item current-item">
+        <span class="progress-count">3</span>
+        <span class="progress-label">In Transit</span>
+    </li>
+    <li class="step-wizard-item">
+        <span class="progress-count">4</span>
+        <span class="progress-label">Order delivered</span>
+    </li>
+    <li class="step-wizard-item cancel">
+        <span class="progress-count"></span>
+        <span class="progress-label">Cancelled</span>
+    </li>
+</ul>
+</section> -->
+<div class="order-details">
+    <table>
+        <tr>
+            <td class="first">
+                OrderID
+            </td>
+            <td class="second">
+                {{order.orderId}}
+            </td>
+        </tr>
+        <tr>
+            <td class="first">
+                Order Date
+            </td>
+            <td class="second">
+                {{order.date}}
+            </td>
+        </tr>
+        <tr>
+            <td class="first">
+                Total Amount
+            </td>
+            <td class="second">
+                ₹{{order.amount}}
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="address">
+    <p>Deliver to: Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, earum tenetur. Corporis fugiat deleniti a veniam odio, modi enim incidunt.</p>
+    <!-- <button>Download Invoice</button> -->
+</div>
+<!-- <div class="cancel">
+    <button>Cancel Order</button>
+</div> -->
+</div>
+<app-footer></app-footer>

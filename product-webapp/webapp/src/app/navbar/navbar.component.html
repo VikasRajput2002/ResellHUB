@@ -1,0 +1,49 @@
+<header>
+  <nav>
+      <label class="logo">
+        <a routerLink="/">
+          <img src="../../assets/logo.jpeg">
+        </a>
+      </label>
+      <form class="search" >
+          <div class="search-bar" style="background-color: white;">
+              <input type="text" placeholder="What are you looking for?" name="searchQuery" (keyup.enter)="search()" [(ngModel)]="searchQuery" >
+
+          </div>
+      </form>
+      
+
+      
+      <ng-container *ngIf="!authService.getLoggedIn(); else loggedIn">
+        <button mat-raised-button color="Accent" (click)="login()" style="background-color: rgb(17, 195, 201);" *ngIf="!authService.getLoggedIn()">Login</button>
+        <button mat-raised-button style="background-color: whitesmoke;color:black" (click)="login()" *ngIf="!authService.getLoggedIn()">Sell +</button>
+        
+      </ng-container>
+
+      
+      <ng-template #loggedIn>
+        <a routerLink="/add-product" class="button-link" *ngIf="authService.getLoggedIn()">
+          <button mat-raised-button style="background-color: whitesmoke;color:rgb(0, 0, 0)">Sell +</button>
+        </a>
+        <div class="profile-dropdown" *ngIf="authService.getLoggedIn()">
+          <button class="profile-button" (click)="toggleDropdown()">
+            <img [src]="defaultProfileImageUrl" alt="Profile Image">          
+          </button>
+              <ul class="dropdown-list" *ngIf="isDropdownOpen">
+                  <li><a (click)="viewProfile()">View Profile</a></li>
+                  <li><a (click)="editProfile()">Chats</a></li>
+                  <li><a (click)="viewslot()">Your Slots</a></li>
+                  <li> <a (click)="logout()">Logout</a>
+              </ul>
+          </div>
+      </ng-template>
+  </nav>
+</header>
+<div class="carousel" style="width: 100vw;margin: 0;">
+  <section class="products mt-0 ml-0" style=" font-size: small;margin-bottom: 20px;background-color:rgb(49, 49, 49); padding: 0; width: 100vw; height: 35px;">
+  <!-- <h2 >Categories </h2> -->
+  <ng-container *ngFor="let category of categories; let i = index">
+  <button style="margin-right: 6px;" (click)="redirectToCategory(category)" mat-button>{{ category }}</button>
+  </ng-container>
+  </section>
+  </div>

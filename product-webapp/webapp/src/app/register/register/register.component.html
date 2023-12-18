@@ -1,0 +1,48 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="register-photo" >
+            <div class="form-container">
+                <div class="image-holder"></div>
+                <form (ngSubmit)="register()" #regForm="ngForm">
+                    <h2 class="text-centr"><strong>Create</strong> an account.</h2>
+                    <div class="form-group">
+                        <input class="form-control" required #name="ngModel" name="name" [class.is-invalid]="name.invalid && name.touched"  type="text" [(ngModel)]="user.name"  placeholder="Full name">
+                        <div class="text-danger" [class.d-none]="name.valid || name.untouched"><small>*Username is required</small></div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" required  [(ngModel)]="user.email" name="email" placeholder="Email address">
+                        <div class="text-danger" [class.d-none]="email.valid || email.untouched"><small>*Email is required</small></div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="tel" #mobile="ngModel" [class.is-invalid]="mobile.invalid && mobile.touched" required pattern="[6789][0-9]{9}" [(ngModel)]="user.mobile" name="mobile" placeholder="Mobile number">
+                        <div class="text-danger" [class.d-none]="mobile.valid || mobile.untouched" ><small>*Enter a valid contact number </small></div>
+                    </div>
+                    <div class="form-group">
+                        <input pattern="^(?=.*[a-z])(?=.*[@$*_=+-]).{5,16}$" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" class="form-control" type="password" [(ngModel)]="user.password" name="password" placeholder="Password   i.e. abc@d or abc$d " required>
+                        <div class="text-danger" [class.d-none]="password.valid||password.untouched"><small>*Password must contain 5 chars and @ or $ </small></div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" [(ngModel)]="confirmpassword" name="confirmpassword" placeholder="Confirm password">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="address" [(ngModel)]="user.address" placeholder="Location">
+                    </div>
+
+                    
+                      <div class="mt-1">
+                        <label style="margin-right: 8px;">Gender </label>
+                        <input  type="radio"  [(ngModel)]="user.gender" name="gender" value="Male" > Male
+                        <input type="radio" name="gender" [(ngModel)]="user.gender" value="Female" > Female
+                    </div>  
+                    
+                    <div class="form-group" >
+                        <button [disabled]="regForm.form.invalid" class="btn btn-primary mt-3" type="submit">Register</button>
+                    </div>
+                    <a class="already mt-2" style="color: black;" href="/login">Already have an account? <span style="color: blue;">Login</span></a>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

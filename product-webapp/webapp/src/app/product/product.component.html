@@ -1,0 +1,63 @@
+<header>
+  <nav>
+  <label class="logo">
+  <img src="assets/logo.png">
+  </label>
+  <form class="search">
+  <input type="text" placeholder="what are you looking for ?">
+  <button type="submit">search</button>
+  </form>
+  <label class="userlogo">
+  <img src="">
+  </label>
+  <button class="button">Sell + </button>
+  </nav>
+  </header>
+  
+  <div class="product-container">
+    <img class="product-image" [src]="product.image" alt="{{ product.name }}">
+    <div class="product-details">
+      <h2>{{ product.name }}</h2>
+      <p><b>Oneplus 11R 5G (Midnight Black,8GB Ram, 256GB Storage)</b></p>
+      <ul>
+        <li>Good Condition</li>
+        <li>Minor Dents</li>
+        <li>Scratches on Display</li>
+      </ul>
+      <p>Amount: ${{ product.amount }}</p>
+      <p>Seller: {{ product.seller.name }}</p>
+      <p>Email: {{ product.seller.email }}</p>
+      <p>Phone: {{ product.seller.phone }}</p>
+      <button style="background-color: yellow; color: black;" (click)="chatWithSeller()">Chat with Seller</button>
+    </div>
+  </div>
+  
+  <h2>Similar Products</h2>
+  <div class="similar-products">
+    <div class="similar-product left">
+      <img src="assets/1.jpeg" alt="Similar Product 1" style="width: 100px; height: 130px; border: 1px solid black;">
+
+      <h3>Product 1</h3>
+      <p>Redmi</p>
+      <p>Price: $9.99</p>
+      <button>View Details</button>
+    </div>
+    
+    <div class="similar-product center">
+      <img src="assets/iphone.jpeg" alt="Similar Product 2" style="width: 100px; height: 130px; border: 1px solid black;">
+      <h3>Product 2</h3>
+      <p>Iphone</p>
+      <p>Price: $19.99</p>
+      <button>View Details</button>
+    </div>
+    
+    <div class="similar-product right">
+      <img src="assets/ipohoe13.jpg" alt="Similar Product 3" style="width: 100px; height: 130px; border: 1px solid black;">
+
+      <h3>Product 3</h3>
+      <p>Iphone13</p>
+      <p>Price: $22.99</p>
+      <button>View Details</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,131 @@
+.col-md-3, .col-md-6 {
+  margin: 0;
+  padding: 0;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.card-header h5 {
+  margin-bottom: 0;
+  font-size: 20px;
+}
+.header-color {
+  background-color:rgb(0, 128, 128);
+  
+}
+.bg-color{
+  background-color:rgb(224, 221, 221);
+}
+
+.chat-details-bg {
+  background:rgb(224, 221, 221);
+  }
+
+.product-details-bg {
+background: linear-gradient(to bottom, rgb(1, 143, 143), #5ff0f5);
+}
+.user-details-bg {
+  background: linear-gradient(to bottom, rgb(4, 146, 146), #5ff0f5); 
+}
+
+.message-input::placeholder {
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(119, 118, 118);
+  display: flex;
+  align-items: center;
+ 
+}
+
+
+.message-input {
+  padding-left: 40px;
+  border: 2px solid rgb(145, 144, 144);
+  outline-color: #747171; 
+}
+
+
+
+.send-button i {
+  color: #fff; 
+  font-size: 20px;}
+
+.form-control {
+  padding-top: 6px;
+  margin-left: 10px;
+  margin-right: 0px;
+}
+
+
+button.btn:nth-child(2) {
+  margin-right: 10px;
+}
+
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+
+button.btn:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+.user-box {
+  padding: 20px 10px;
+  border: 1px solid rgb(133, 131, 131);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-box:hover {
+  background-color: rgb(184, 185, 185);
+}
+
+
+
+.user-details-bg {
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-width: 0px;
+}
+
+
+
+
+.user-message {
+  text-align: left;
+  background-color: rgb(1, 117, 117);
+  color: white;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  float: right; 
+  clear: both;
+  word-wrap: break-word;
+  max-width: 60%;
+}
+
+.other-message {
+  text-align: left;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  float: left; 
+  clear: both;
+  word-wrap: break-word;
+  max-width: 60%;
+}
+
+
+.card-body.chat-details-bg {
+  height: 300px; 
+  overflow-y: auto;
+}

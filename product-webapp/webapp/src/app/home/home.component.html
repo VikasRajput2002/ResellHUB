@@ -1,0 +1,154 @@
+<app-navbar></app-navbar>
+
+
+<div>
+  <h2>Recently Added</h2>
+
+<div class="carousel">
+ 
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let product of products" class="slide">
+      <mat-card (click)="showProducts(product.id,product.productCategory)" style="height: 200px;" 
+      >
+        <img class="mat-card-img" [src]="product.productImg" alt="product.productName">
+        <!-- <h3 style="font-family: cursive; font-size: x-large">
+          {{ product.productName }} <br>
+          Price: {{ product.productPrice }} <br>
+          Location: {{ product.location }}
+        </h3> -->
+      </mat-card>
+    </div>
+  </ngx-slick-carousel>
+</div>
+</div>
+  <section class="products">
+    <h2>Categories</h2>
+    
+    <!-- <ng-container *ngFor="let product of products; let i = index">
+      
+      <div class="product circle" *ngIf="i < 4 || showAllProducts">
+        <mat-card (click)="redirectToCategory(product.productCategory)">
+        <img  class="Categories-img"[src]="product.productImg" [alt]="product.productName" 
+        style="border-radius: 100%;height:100px; width:100px;"
+        >
+        <h3>{{ product.productCategory }}</h3>
+      </mat-card>
+      </div>
+    
+    </ng-container> -->
+
+  <div  style="display: flex; color:white; flex-direction: row; justify-content: space-between; margin:0px 20px;background-color: rgb(0, 128, 128); padding: 30px; border-radius: 20px;" >
+      <div >
+        <img (click)="redirectToCategory('car')" style="cursor: pointer;" class="Categories-img" src="../../assets/category/car-category.jpg" 
+        style="border-radius: 100%;height:100px; width:100px;"
+        >
+        <h3 style="text-align: center;">Car</h3>
+      </div>
+      <div >
+        <img (click)="redirectToCategory('mobile')" class="Categories-img" src="../../assets/category/used-iPhone-11.jpg" 
+        style="border-radius: 100%;height:100px; width:100px;"
+        >
+        <h3 style="text-align: center;">Mobile</h3>
+      </div>
+      <div >
+        <img (click)="redirectToCategory('bike')" class="Categories-img" src="../../assets/category/bike.jpeg" 
+        style="border-radius: 100%;height:100px; width:100px;"
+        >
+        <h3 style="text-align: center;">Bike</h3>
+      </div>
+      <div >
+        <img (click)="redirectToCategory('furniture')" class="Categories-img" src="../../assets/category/furniture.jpeg" 
+        style="border-radius: 100%;height:100px; width:100px;"
+        >
+        <h3 style="text-align: center;">Furniture</h3>
+      </div>
+      <div >
+        <img (click)="redirectToCategory('fashion')" class="Categories-img" src="../../assets/category/fashion.jpeg" 
+        style="border-radius: 100%;height:100px; width:100px;"
+        >
+        <h3 style="text-align: center;">Fashion</h3>
+      </div>
+      <div >
+        <img (click)="redirectToCategory('laptop')" class="Categories-img" src="../../assets/category/laptop.jpeg" 
+        style="border-radius: 100%;height:100px; width:100px;"
+        >
+        <h3 style="text-align: center;">Laptop</h3>
+      </div>
+  </div>
+  
+  </section>
+
+
+  <section class="products">
+    <h2>Fresh Recommendations for you</h2>
+    <ng-container *ngFor="let product of products; let i = index">
+      <div class="product square" *ngIf="i < 4 || showAllProducts">
+        <mat-card (click)="showProducts(product.id, product.productCategory); ">
+        <img [src]="product.productImg" [alt]="product.productName" >
+        <h3>
+          <div style="display: flex;align-items: center;flex-direction: column;">
+            <p style="font-weight: 700;">{{ product.productCategory }} </p>
+           <p style="background-color: green; width:fit-content; padding:0 2px;"> ₹ {{product.productPrice}} </p>
+          <p style='font-size:16px'> <i class='fas fa-map-marker-alt' style='font-size:16px;color: rgb(128, 7, 7);'></i> {{product.location}}</p>
+          </div>
+        </h3>
+      </mat-card>
+      </div>
+    </ng-container>
+  
+    <button mat-raised-button class="show-more-button" (click)="toggleShowAllProducts()" style="background-color:#ffcc00 ;color:black">
+      Show {{ showAllProducts ? 'Less' : 'More' }}
+    </button>
+  </section>
+
+  <section class="products">
+    <h2>Best Deal Ever !!!</h2>
+    <ng-container *ngFor="let product of products; let i = index">
+      <div class="product circle" *ngIf="i < 4 || showAllProducts">
+        <mat-card (click)="showProducts(product.id, product.productCategory)">
+        <img [src]="product.productImg" [alt]="product.productName">
+        <h3>
+          <div style="display: flex;align-items: center;flex-direction: column;">
+          <p style="font-weight: 700;">{{ product.productCategory }} </p>
+         <p style="background-color: green; width:fit-content; padding:0 2px;"> ₹ {{product.productPrice}} </p>
+        <p style='font-size:16px'> <i class='fas fa-map-marker-alt' style='font-size:16px;color: rgb(128, 7, 7);'></i> {{product.location}}</p>
+        </div>
+        </h3>
+      </mat-card>
+      </div>
+    </ng-container>
+  
+    <button style="background-color:#ffcc00 ;color:black" mat-raised-button class="show-more-button" (click)="toggleShowAllProducts()">
+      Show {{ showAllProducts ? 'Less' : 'More' }}
+    </button>
+  </section>
+
+
+
+
+  <section class="products">
+    <h2>Popular Destinations</h2>
+    <ng-container *ngFor="let product of products; let i = index">
+      <div class="product circle" *ngIf="i < 4 || showAllProducts">
+        <mat-card (click)="showProducts(product.id, product.productCategory)" >
+        <img [src]="product.productImg" [alt]="product.productName">
+        <h3>
+          <div style="display: flex;align-items: center;flex-direction: column;">
+            <p style="font-weight: 700;">{{ product.productCategory }} </p>
+           <p style="background-color: green; width:fit-content; padding:0 2px;"> ₹ {{product.productPrice}} </p>
+          <p style='font-size:16px'> <i class='fas fa-map-marker-alt' style='font-size:16px;color: rgb(128, 7, 7);'></i> {{product.location}}</p>
+          </div>
+        </h3>
+      </mat-card>
+      </div>
+    </ng-container>
+  
+    <button style="background-color:#ffcc00 ;color:black" mat-raised-button class="show-more-button" (click)="toggleShowAllProducts()">
+      Show {{ showAllProducts ? 'Less' : 'More' }}
+    </button>
+  </section>
+
+  
+
+<app-footer></app-footer>
+

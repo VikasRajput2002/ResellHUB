@@ -1,0 +1,73 @@
+<body>
+  <div class="container-fluid full-height">
+    <div class="row full-height">
+      <div class="col-md-3 full-height division-1">
+        <div class="card full-height">
+          <div class="card-header header-color" style="padding: 20px; font-size: 20px;">
+            <h5>{{ senderName }}</h5>
+          </div>
+          <div class="card-body user-details-bg">
+            <div class="user-boxes">
+              <div
+                class="user-box"
+                *ngFor="let user of usersWhoSent"
+                (click)="changeRecipient(user.userId,user.name)"
+              >
+                {{ user.name }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 full-height">
+        <div class="card full-height">
+          <div class="card-header header-color" style="padding: 20px; font-size: 20px;">
+            <h5>{{ recipientName }}</h5>
+          </div>
+          <div class="card-body chat-details-bg">
+            <div class="message-container">
+              <div *ngFor="let message of chatMessages.slice(); let i = index">
+                <div class="message-box" [ngClass]="{'user-message': message.senderId === senderId, 'other-message': message.senderId !== senderId}">
+                  <div class="message-content">
+                    {{ message.content }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      
+          
+          <div class="input-group bg-color">
+  <textarea class="form-control message-input" [(ngModel)]="messageContent" placeholder="Type your message..." (keyup.enter)="sendMessage()"></textarea>
+  <button class="btn btn-primary send-button" (click)="sendMessage()">
+    <i class="fas fa-paper-plane"></i>
+  </button>
+</div>
+        </div>
+      </div>
+
+      <!-- Division 3 -25% width -->
+      <div class="col-md-3 full-height division-3" >
+        <div class="card full-height">
+          <div class="card-header header-color" style="padding: 20px; font-size: 20px;">
+            <h5>Product Details</h5>
+          </div>
+    
+          <div class="card-body text-center product-details-bg">
+            <div class="product-details">
+              <img [src]="productdetails.productImg" alt="" class="img-fluid product-image-small">
+              <p><b>{{ productdetails.productName }}</b></p>
+              <p>Category: {{ productdetails.productCategory }}</p>
+              <p>Location: {{ productdetails.location }}</p>
+              <p>Price: ${{ productdetails.productPrice }}</p>
+              <button class="btn btn-primary" (click)="pay(amount,productId)">Pay Now</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

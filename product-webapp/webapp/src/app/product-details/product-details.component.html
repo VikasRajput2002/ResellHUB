@@ -1,0 +1,17 @@
+<div class="container mat-elevation-z2">
+  <h2>Product Details</h2>
+  <mat-card *ngIf="product">
+    <img [src]="product.productImg" alt="Product Image" style="width: 100px; height:100px;">
+    <mat-card-content>
+      <h3>{{ product.productName }}</h3>
+      <p class="product-category">Product Category: {{ product.productCategory }}</p>
+      <p>Product Description: {{ product.productDesc }}</p>
+      <p>Location: {{ product.location }}</p>
+      <p>Product Price: {{ product.productPrice }}</p>
+      <button mat-button color="primary" [routerLink]="['/view-products']" class="back-button">
+        <mat-icon>chevron_left</mat-icon>
+        Back
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>

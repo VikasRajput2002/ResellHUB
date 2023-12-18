@@ -1,0 +1,54 @@
+footer {
+    background-color: rgb(0, 128, 128);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.footer-section {
+    display: flex;
+    /* position: absolute; */
+}
+
+.footercontainer {
+    background-color: rgb(0, 128, 128);
+    color: black;
+    text-align: left;
+    padding: 20px;
+    max-width: 30%;
+    flex: 1;
+}
+
+.text-button {
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 0; 
+}
+
+.text-button:hover {
+    background-color: orange;
+    background-clip: text; 
+    -webkit-background-clip: text;
+    color: transparent; 
+}
+
+.footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 128, 128);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.center-align-content {
+    text-align: center;
+}

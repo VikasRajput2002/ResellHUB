@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<!-- <div class="wrap">
+    <div class="search">
+       <input type="text" class="searchTerm" placeholder="Search here">
+       <button type="submit" class="searchButton">
+         <i class="fa fa-search"></i>
+      </button>
+    </div>
+ </div> -->
+ <!-- <mat-form-field class="example-full-width">
+    <span matPrefix> </span>
+    <input type="tel" matInput placeholder="Search" name= "search" [(ngModel)]= "search">
+    <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+    </mat-form-field> -->
+    
+    <h1 style="text-align: center; font-weight: 500;">Your Orders</h1>
+      <hr>  
+<div class="orders" *ngFor="let o of order">
+  <a [routerLink]="['/orders',o.orderId]"> 
+    <div class="order" >
+        <div class="image">
+        <img [src]="o.product.productImg" alt="">
+        </div>
+        <div class="product-details">
+        <h2>{{o.product.productName}}</h2>
+        <p>{{o.product.productDesc}} </p>
+        <p>{{o.product.location}}</p>
+        <p>₹{{o.amount}}</p>
+    </div>
+    <div class="go-corner" href="#">
+        <div class="go-arrow">
+          →
+        </div>
+    </div>
+  <!-- </a> -->
+</div>
+</a>
+</div>
+<app-footer></app-footer>

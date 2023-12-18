@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<button mat-button color="primary" [routerLink]="['/view-products']" class="view-products-button">
+  <mat-icon color="white">view_list</mat-icon>
+  View Products
+</button>
+<div class="container">
+  <h2>Add Product</h2>
+  <form  enctype="multipart/form-data">
+    <mat-stepper linear>
+      <!-- Step 1: Product Information -->
+      <mat-step style="color:rgb(0,128,128)">
+        <ng-template matStepLabel>Product Information</ng-template>
+        <div class="form-group">
+          <label for="productName">Product Name:</label>
+          <input type="text" class="form-control" id="productName" [(ngModel)]="productName" name="productName" required>
+        </div>
+        <div class="form-group">
+          <label for="productCategory">Product Category:</label>
+          <select class="form-control" id="productCategory" [(ngModel)]="productCategory" name="productCategory" required>
+            <option value="car">Car</option>
+            <option value="mobile">Mobile</option>
+            <option value="laptop">Laptop</option>
+            <option value="bikes">Bikes</option>
+            <option value="furniture">Furniture</option>
+            <option value="fashion">Fashion</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="productDesc">Product Description:</label>
+          <textarea class="form-control" id="productDesc" [(ngModel)]="productDesc" name="productDesc" rows="4" required></textarea>
+        </div>
+        <button mat-button matStepperNext class="mat-step button mat-button custom-next-button">Next</button>      </mat-step>
+
+      <!-- Step 2: Product Pricing -->
+      <mat-step>
+        <ng-template matStepLabel>Product Pricing</ng-template>
+        <div class="form-group">
+          <label for="productPrice">Product Price:</label>
+          <input type="number" class="form-control" id="productPrice" [(ngModel)]="productPrice" name="productPrice" required>
+        </div>
+        
+        <!-- Add a div for the product image -->
+        <div class="form-group">
+          <label for="productImg">Product Image:</label>
+          <input type="file" class="form-control" id="productImg" (change)="onFileChange($event)" name="productImg" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" class="form-control" id="location" [(ngModel)]="location" name="location" required>
+        </div>
+        
+       
+<button type="submit" class="mat-step button mat-button submit" mat-button (click)="onSubmit()">Add Product</button>
+      </mat-step>
+    </mat-stepper>
+  </form>
+</div>
+<app-footer></app-footer>

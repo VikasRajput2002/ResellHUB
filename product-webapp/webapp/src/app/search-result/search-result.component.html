@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div style="display: flex; flex-direction: row;">
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative">
+    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+      <div class="col hp" *ngFor="let item of dataArray">
+        <div class="card h-100 shadow-sm" >
+          <a [routerLink]="['/product-details',item.id]">
+            <img [src]="item.productImg" class="card-img-top" />
+          </a>
+           <div class="card-body" >
+            <div class="clearfix mb-3">
+              <span class="float-start badge rounded-pill bg-success">₹{{item.productPrice}}</span>
+  
+            </div>
+            <h5 class="card-title">
+              <a target="_blank" href="#">{{item.productDesc}} </a>
+            </h5>
+  
+            <div class="d-grid gap-2 my-4">
+              <button href="#" class="btn btn-warning bold-btn" (click)="pay(item.productPrice,item.id)">Place Order</button>
+            </div>
+            <div class="clearfix mb-1">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf='isProduct' style="display: flex;justify-content: center; align-self: center;">
+
+      <h1>No related products</h1>
+    </div>
+
+  <!-- <app-footer></app-footer> -->

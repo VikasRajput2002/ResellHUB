@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Update Product</h2>
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <!-- Product Information -->
+    <div class="form-group">
+      <label for="productName">Product Name:</label>
+      <input type="text" class="form-control" id="productName" [(ngModel)]="productName" name="productName" required>
+    </div>
+    <div class="form-group">
+      <label for="productCategory">Product Category:</label>
+      <input type="text" class="form-control" id="productCategory" [(ngModel)]="productCategory" name="productCategory" required>
+    </div>
+    <div class="form-group">
+      <label for="productDesc">Product Description:</label>
+      <textarea class="form-control" id="productDesc" [(ngModel)]="productDesc" name="productDesc" rows="4" required></textarea>
+    </div>
+
+    <!-- Product Pricing -->
+    <div class="form-group">
+      <label for="productPrice">Product Price:</label>
+      <input type="number" class="form-control" id="productPrice" [(ngModel)]="productPrice" name="productPrice" required>
+    </div>
+    <div class="form-group">
+<label for="productImg">Product Image:</label>
+<img *ngIf="productImgSrc" [src]="productImgSrc" alt="Product Image" class="img-thumbnail">
+<input type="file" class="form-control-file" id="productImg" (change)="onFileChange($event)" name="productImg">
+</div>
+    
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" class="form-control" id="location" [(ngModel)]="location" name="location" required>
+    </div>
+
+   
+    <div>
+      <button type="submit" class="mat-button mat-raised-button custom-button" color="primary" style="float: right;">Update Product</button>
+    </div>
+    <button mat-button color="primary" [routerLink]="['/view-products']" class="back-button">
+      <mat-icon>chevron_left</mat-icon>
+      Back
+    </button>
+  </form>
+</div>
